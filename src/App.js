@@ -4,10 +4,11 @@
  */
 // react library imports
 import React from 'react';
-import {Text} from 'react-native';
+// container component
+import PrimaryContainer from './containers';
 
-const App = (props: Props) => {
-  return <Text>{'Hi Coffeee'}</Text>;
+const App = () => {
+  return <PrimaryContainer />;
 };
 
 export default App;
