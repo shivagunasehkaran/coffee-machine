@@ -7,7 +7,7 @@ import React from 'react';
 // container component
 import PrimaryContainer from './containers';
 
-const App = () => {
+const App = (): Node => {
   return <PrimaryContainer />;
 };
 
