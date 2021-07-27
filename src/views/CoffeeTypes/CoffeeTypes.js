@@ -5,7 +5,13 @@
 // library imports
 import type {Node} from 'react';
 import React, {useEffect, useState} from 'react';
-import {FlatList, SafeAreaView, Text, View} from 'react-native';
+import {
+  FlatList,
+  SafeAreaView,
+  Text,
+  View,
+  ActivityIndicator,
+} from 'react-native';
 // component imports
 import CoffeeDetails from '../../components/CoffeeDetails/CoffeeDetails';
 // API imports
@@ -17,9 +23,11 @@ import {styles} from './CoffeeTypes.style';
 
 const CoffeeTypes = (): Node => {
   const [coffeeData, setCoffeeData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // call API one time
+  // call API one time when app loads
   useEffect(() => {
+    setIsLoading(true);
     getCoffeeDetails();
   }, []);
 
@@ -27,6 +35,7 @@ const CoffeeTypes = (): Node => {
   async function getCoffeeDetails() {
     let data = await useFetchCoffeeAPI();
     setCoffeeData(data.types);
+    setIsLoading(false);
   }
 
   // child render item
@@ -45,6 +54,7 @@ const CoffeeTypes = (): Node => {
           {ConstantText.coffee_types_subTitle}
         </Text>
         <View style={styles.flatListView}>
+          {isLoading && <ActivityIndicator size="large" />}
           <FlatList
             data={coffeeData}
             renderItem={childListRenderItem}
