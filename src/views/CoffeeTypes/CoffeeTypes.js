@@ -2,11 +2,12 @@
  * @format
  * @flow strict-local
  */
-
 // library imports
 import type {Node} from 'react';
 import React, {useEffect, useState} from 'react';
 import {FlatList, SafeAreaView, Text, View} from 'react-native';
+// component imports
+import CoffeeDetails from '../../components/CoffeeDetails/CoffeeDetails';
 // API imports
 import {useFetchCoffeeAPI} from '../../services/Services';
 // util imports
@@ -28,15 +29,10 @@ const CoffeeTypes = (): Node => {
     setCoffeeData(data.types);
   }
 
-  // flat list render item
-  const renderRow = items => {
-    const item = items.item;
-    return (
-      <View style={styles.renderItem}>
-        <Text>{item.name}</Text>
-      </View>
-    );
-  };
+  // child render item
+  const childListRenderItem = ({item, index}) => (
+    <CoffeeDetails item={item} index={index} />
+  );
 
   // child KeyExtractor
   const childListKeyExtractor = (item, index) => String(index);
@@ -51,7 +47,7 @@ const CoffeeTypes = (): Node => {
         <View style={styles.flatListView}>
           <FlatList
             data={coffeeData}
-            renderItem={renderRow}
+            renderItem={childListRenderItem}
             keyExtractor={childListKeyExtractor}
           />
         </View>

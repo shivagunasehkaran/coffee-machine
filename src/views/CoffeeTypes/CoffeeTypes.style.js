@@ -10,28 +10,20 @@ export const styles = StyleSheet.create({
   },
   title: {
     marginTop: 10,
-    paddingLeft: 20,
+    paddingLeft: 17,
     fontSize: 16,
     fontFamily: 'Avenir',
     fontWeight: '700',
   },
   subTitle: {
     marginTop: 10,
-    paddingLeft: 20,
+    paddingLeft: 17,
     fontSize: 24,
     fontFamily: 'Avenir',
     fontWeight: '500',
   },
   flatListView: {
-    backgroundColor: 'green',
     marginVertical: 10,
-  },
-  renderItem: {
-    flex: 1,
-    flexDirection: 'row',
-    marginHorizontal: 5,
-    marginVertical: 5,
-    backgroundColor: 'green',
-    borderRadius: 8,
+    marginHorizontal: 14,
   },
 });
