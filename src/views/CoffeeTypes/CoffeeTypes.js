@@ -10,7 +10,10 @@ const CoffeeTypes = props => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Text style={styles.title}>{ConstantText.toast_connected}</Text>
+        <Text style={styles.title}>{ConstantText.coffee_device_id_title}</Text>
+        <Text style={styles.subTitle}>
+          {ConstantText.coffee_types_subTitle}
+        </Text>
       </SafeAreaView>
     </View>
   );

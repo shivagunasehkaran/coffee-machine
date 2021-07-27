@@ -15,4 +15,11 @@ export const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontWeight: '700',
   },
+  subTitle: {
+    marginTop: 10,
+    paddingLeft: 20,
+    fontSize: 24,
+    fontFamily: 'Avenir',
+    fontWeight: '500',
+  },
 });
