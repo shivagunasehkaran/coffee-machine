@@ -28,8 +28,10 @@ const CoffeeMachine = props => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Text style={styles.title}>{ConstantText.nfc_title}</Text>
-        <Text style={styles.subTitle}>{ConstantText.nfc_subTitle}</Text>
+        <Text style={styles.title}>{ConstantText.coffee_machine_title}</Text>
+        <Text style={styles.subTitle}>
+          {ConstantText.coffee_machine_subTitle}
+        </Text>
         <View style={styles.imageView}>
           <Image source={Images.Images.nfcCard} style={styles.nfcImage} />
         </View>
