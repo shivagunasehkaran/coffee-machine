@@ -22,7 +22,7 @@ export const PublicRoutes = () => {
         headerBackTitleStyle: {
           fontSize: 16,
           fontFamily: ConstantText.font_family,
-          fontWeight: ConstantText.font_bold,
+          fontWeight: ConstantText.font_bold3,
         },
       }}>
       <PublicStack.Screen

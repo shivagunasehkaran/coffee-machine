@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {ColourPalette} from '../../assets/styles/ColourPalette';
+import {ConstantText} from '../../utills/ConstantText';
 
 export const styles = StyleSheet.create({
   container: {
@@ -24,7 +25,7 @@ export const styles = StyleSheet.create({
   name: {
     color: ColourPalette.white,
     fontSize: 14,
-    fontFamily: 'Avenir Next',
-    fontWeight: '600',
+    fontFamily: ConstantText.font_family2,
+    fontWeight: ConstantText.font_bold2,
   },
 });
