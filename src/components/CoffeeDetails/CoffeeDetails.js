@@ -13,6 +13,7 @@ import {styles} from './CoffeeDetails.style';
 type CoffeeDetailsProp = {
   item: Object,
   index: number,
+  onPress: Function,
 };
 
 // flatlist render item
