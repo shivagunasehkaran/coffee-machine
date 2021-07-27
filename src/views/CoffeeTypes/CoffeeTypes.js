@@ -20,8 +20,10 @@ import {useFetchCoffeeAPI} from '../../services/Services';
 import {ConstantText} from '../../utills/ConstantText';
 // style imports
 import {styles} from './CoffeeTypes.style';
+// route imports
+import * as ROUTES from '../../routes/Routes';
 
-const CoffeeTypes = (): Node => {
+const CoffeeTypes = (props): Node => {
   const [coffeeData, setCoffeeData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -38,9 +40,18 @@ const CoffeeTypes = (): Node => {
     setIsLoading(false);
   }
 
+  // go to coffee sizes screen
+  const goToCoffeeSizes = item => {
+    props.navigation.push(ROUTES.pageNameCoffeeSizes);
+  };
+
   // child render item
   const childListRenderItem = ({item, index}) => (
-    <CoffeeDetails item={item} index={index} />
+    <CoffeeDetails
+      item={item}
+      index={index}
+      onPress={() => goToCoffeeSizes(item)}
+    />
   );
 
   // child KeyExtractor
