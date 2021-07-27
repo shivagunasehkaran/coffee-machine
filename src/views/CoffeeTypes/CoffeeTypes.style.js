@@ -22,4 +22,16 @@ export const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontWeight: '500',
   },
+  flatListView: {
+    backgroundColor: 'green',
+    marginVertical: 10,
+  },
+  renderItem: {
+    flex: 1,
+    flexDirection: 'row',
+    marginHorizontal: 5,
+    marginVertical: 5,
+    backgroundColor: 'green',
+    borderRadius: 8,
+  },
 });

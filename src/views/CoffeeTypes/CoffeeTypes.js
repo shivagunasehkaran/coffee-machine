@@ -1,6 +1,12 @@
+/**
+ * @format
+ * @flow strict-local
+ */
+
 // library imports
-import React, {useEffect} from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import type {Node} from 'react';
+import React, {useEffect, useState} from 'react';
+import {FlatList, SafeAreaView, Text, View} from 'react-native';
 // API imports
 import {useFetchCoffeeAPI} from '../../services/Services';
 // util imports
@@ -8,7 +14,9 @@ import {ConstantText} from '../../utills/ConstantText';
 // style imports
 import {styles} from './CoffeeTypes.style';
 
-const CoffeeTypes = props => {
+const CoffeeTypes = (): Node => {
+  const [coffeeData, setCoffeeData] = useState([]);
+
   // call API one time
   useEffect(() => {
     getCoffeeDetails();
@@ -17,8 +25,21 @@ const CoffeeTypes = props => {
   // get coffee details using API
   async function getCoffeeDetails() {
     let data = await useFetchCoffeeAPI();
-    console.log('data -- >', data);
+    setCoffeeData(data.types);
   }
+
+  // flat list render item
+  const renderRow = items => {
+    const item = items.item;
+    return (
+      <View style={styles.renderItem}>
+        <Text>{item.name}</Text>
+      </View>
+    );
+  };
+
+  // child KeyExtractor
+  const childListKeyExtractor = (item, index) => String(index);
 
   return (
     <View style={styles.container}>
@@ -27,6 +48,13 @@ const CoffeeTypes = props => {
         <Text style={styles.subTitle}>
           {ConstantText.coffee_types_subTitle}
         </Text>
+        <View style={styles.flatListView}>
+          <FlatList
+            data={coffeeData}
+            renderItem={renderRow}
+            keyExtractor={childListKeyExtractor}
+          />
+        </View>
       </SafeAreaView>
     </View>
   );
