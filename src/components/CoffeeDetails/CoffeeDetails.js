@@ -21,7 +21,9 @@ const CoffeeDetails = (props: CoffeeDetailsProp): Node => {
   let item = props.item ? props.item : null;
   let name = item ? item.name : '';
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => props.onPress(item)}>
       <View style={styles.avatarView}>
         <Image source={Images.Images.lungo_medium} style={styles.avatar} />
       </View>
