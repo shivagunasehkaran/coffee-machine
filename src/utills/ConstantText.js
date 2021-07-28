@@ -1,6 +1,7 @@
 // applicaion text constants
 export const ConstantText = {
   toast_success: 'success',
+  toast_error: 'error',
   toast_connected: 'Device Connected.',
   toast_bottom: 'bottom',
   coffee_machine_title: 'Dark Roasted Beans',
@@ -12,4 +13,8 @@ export const ConstantText = {
   font_bold1: '500',
   font_bold2: '600',
   font_bold3: '700',
+  network_failure: 'Network request failed',
+  coffee_ristretto: 'Ristretto',
+  coffee_cappuccino: 'Cappuccino',
+  coffee_espresso: 'Espresso',
 };
