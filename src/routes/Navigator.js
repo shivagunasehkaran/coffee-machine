@@ -1,5 +1,6 @@
 // react library imports
 import React from 'react';
+import {Platform} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 // presentational component imports
 import CoffeeMachine from '../views/CoffeeMachine';
@@ -50,6 +51,10 @@ export const PublicRoutes = () => {
           title: '',
           headerShown: true,
           headerBackTitle: ConstantText.coffee_device_id_title,
+          headerTitle:
+            Platform.OS === ConstantText.platform_android
+              ? ConstantText.coffee_device_id_title
+              : null,
         }}
       />
       <PublicStack.Screen
@@ -60,6 +65,10 @@ export const PublicRoutes = () => {
           title: '',
           headerShown: true,
           headerBackTitle: ConstantText.coffee_device_id_title,
+          headerTitle:
+            Platform.OS === ConstantText.platform_android
+              ? ConstantText.coffee_device_id_title
+              : null,
         }}
       />
     </PublicStack.Navigator>
