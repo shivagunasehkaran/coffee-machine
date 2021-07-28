@@ -1,4 +1,6 @@
 import {GET_URL} from './Constants';
+import Toast from 'react-native-toast-message';
+import {ConstantText} from '../utills/ConstantText';
 
 export async function useFetchCoffeeAPI() {
   const url = GET_URL.COFFEE_DETAILS_URL;
@@ -8,6 +10,11 @@ export async function useFetchCoffeeAPI() {
       return responseJson;
     })
     .catch(err => {
-      return Promise.reject(err);
+      // show toast for network failure
+      return Toast.show({
+        type: ConstantText.toast_error,
+        text1: ConstantText.network_failure,
+        position: ConstantText.toast_bottom,
+      });
     });
 }
