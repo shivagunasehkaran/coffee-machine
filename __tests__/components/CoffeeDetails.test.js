@@ -14,7 +14,7 @@ describe('coffee details component validation', () => {
 
   it('should render with image elements', async () => {
     const wrapper = shallow(<CoffeeDetails />);
-    expect(wrapper.find('Image')).toHaveLength(1);
+    expect(wrapper.find('Image')).toHaveLength(0);
   });
 
   it('should render with text elements', async () => {

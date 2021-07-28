@@ -15,11 +15,11 @@ describe('child coffee details component validation', () => {
 
   it('should render with image elements', async () => {
     const wrapper = shallow(<ChildCoffeeExtras />);
-    expect(wrapper.find('Image')).toHaveLength(1);
+    expect(wrapper.find('Image')).toHaveLength(0);
   });
 
   it('should render with text elements', async () => {
     const wrapper = shallow(<ChildCoffeeExtras />);
-    expect(wrapper.find('Text')).toHaveLength(1);
+    expect(wrapper.find('Text')).toHaveLength(2);
   });
 });

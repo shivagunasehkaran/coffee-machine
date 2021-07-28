@@ -30,7 +30,7 @@ describe('coffee sizes screen : flatlist', () => {
         name: 'medium',
       },
     ];
-    const wrapper = shallow(<Home item={item} />);
+    const wrapper = shallow(<CoffeeSizes item={item} />);
     expect(wrapper.find('FlatList').length).toEqual(1);
   });
 });

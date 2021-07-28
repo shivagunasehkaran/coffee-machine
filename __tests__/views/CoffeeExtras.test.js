@@ -26,7 +26,7 @@ describe('coffee extras screen : flatlist', () => {
         name: 'milk',
       },
     ];
-    const wrapper = shallow(<Home item={item} />);
+    const wrapper = shallow(<CoffeeExtras item={item} />);
     expect(wrapper.find('FlatList').length).toEqual(1);
   });
 });
