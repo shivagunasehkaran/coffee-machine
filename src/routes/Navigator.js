@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import CoffeeMachine from '../views/CoffeeMachine';
 import CoffeeTypes from '../views/CoffeeTypes';
 import CoffeeSizes from '../views/CoffeeSizes';
+import CoffeeExtras from '../views/CoffeeExtras';
 // style imports
 import {ColourPalette} from '../assets/styles/ColourPalette';
 // route imports
@@ -45,6 +46,16 @@ export const PublicRoutes = () => {
         key={ROUTES.pageNameCoffeeSizes}
         name={ROUTES.pageNameCoffeeSizes}
         component={CoffeeSizes}
+        options={{
+          title: '',
+          headerShown: true,
+          headerBackTitle: ConstantText.coffee_device_id_title,
+        }}
+      />
+      <PublicStack.Screen
+        key={ROUTES.pageNameCoffeeExtras}
+        name={ROUTES.pageNameCoffeeExtras}
+        component={CoffeeExtras}
         options={{
           title: '',
           headerShown: true,
