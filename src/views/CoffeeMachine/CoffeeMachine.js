@@ -16,7 +16,7 @@ const CoffeeMachine = props => {
     // move to choose coffee
     setTimeout(() => {
       props.navigation.push(ROUTES.pageNameCoffeeTypes);
-    }, 2000);
+    }, 1500);
     // show toast for device connection
     Toast.show({
       type: ConstantText.toast_success,
