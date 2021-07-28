@@ -45,7 +45,7 @@ const CoffeeExtras = (props): Node => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Text style={styles.title}>{ConstantText.coffee_types_subTitle}</Text>
+        <Text style={styles.title}>{ConstantText.coffee_types_extras}</Text>
         <View style={styles.flatListView}>
           <FlatList
             data={coffeeData.extras}

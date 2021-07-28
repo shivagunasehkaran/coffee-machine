@@ -28,7 +28,7 @@ const CoffeeMachine = props => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Text style={styles.title}>{ConstantText.coffee_machine_title}</Text>
+        <Text style={styles.title}>{ConstantText.coffee_types_size}</Text>
         <Text style={styles.subTitle}>
           {ConstantText.coffee_machine_subTitle}
         </Text>

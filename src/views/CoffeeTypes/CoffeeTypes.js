@@ -64,7 +64,7 @@ const CoffeeTypes = (props): Node => {
       <SafeAreaView>
         <Text style={styles.title}>{ConstantText.coffee_device_id_title}</Text>
         <Text style={styles.subTitle}>
-          {ConstantText.coffee_types_subTitle}
+          {ConstantText.coffee_types_style}
         </Text>
         <View style={styles.flatListView}>
           {isLoading && <ActivityIndicator size="large" />}
