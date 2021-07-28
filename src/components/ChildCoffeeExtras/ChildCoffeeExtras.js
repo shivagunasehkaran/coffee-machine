@@ -18,6 +18,7 @@ type ChildCoffeeExtrasProp = {
   item: Object,
   index: number,
   onPress: Function,
+  selectedIndex: number,
 };
 
 // child flatlist render item
@@ -29,6 +30,7 @@ const ChildCoffeeExtras = (props: ChildCoffeeExtrasProp): Node => {
   let itemIndex = props.index ? props.index : null;
   let selectedItemIndex = props.selectedIndex ? props.selectedIndex : null;
   let name = items ? items.name : '';
+  let dataSource = items ? items.subselections : null;
   let avatar = null;
 
   // setting imaged based on props
@@ -82,7 +84,7 @@ const ChildCoffeeExtras = (props: ChildCoffeeExtrasProp): Node => {
             <Text style={styles.line} />
           </View>
           <FlatList
-            data={items.subselections}
+            data={dataSource}
             renderItem={childListRenderItem}
             keyExtractor={keyExtractor}
           />
