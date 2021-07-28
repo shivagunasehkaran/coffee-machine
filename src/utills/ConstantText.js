@@ -19,4 +19,5 @@ export const ConstantText = {
   coffee_ristretto: 'Ristretto',
   coffee_cappuccino: 'Cappuccino',
   coffee_espresso: 'Espresso',
+  loader_large: 'large',
 };
