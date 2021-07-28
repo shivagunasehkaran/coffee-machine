@@ -4,37 +4,43 @@
  */
 // library imports
 import type {Node} from 'react';
-import React, {useContext} from 'react';
-import {Alert, FlatList, SafeAreaView, Text, View} from 'react-native';
+import React, {useContext, useState} from 'react';
+import {FlatList, SafeAreaView, Text, View} from 'react-native';
 // component imports
-import CoffeeDetails from '../../components/CoffeeDetails/CoffeeDetails';
+import ChildCoffeeExtras from '../../components/ChildCoffeeExtras';
+// provider imports
+import {CoffeeContext} from '../../provider/CoffeeProvider';
 // util imports
 import {ConstantText} from '../../utills/ConstantText';
 // style imports
 import {styles} from './CoffeeExtras.style';
-// provider imports
-import {CoffeeContext} from '../../provider/CoffeeProvider';
 
 const CoffeeExtras = (props): Node => {
   // get context to access data and bind data
   const {coffeeData} = useContext(CoffeeContext);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   // expand the flatlist item
-  const expandCoffeeExtras = item => {
-    Alert.alert(item.name);
+  const renderAccordian = (item, index) => {
+    if (selectedIndex === index) {
+      setSelectedIndex(-1);
+    } else {
+      setSelectedIndex(index);
+    }
   };
 
   // child render item
   const childListRenderItem = ({item, index}) => (
-    <CoffeeDetails
+    <ChildCoffeeExtras
       item={item}
       index={index}
-      onPress={() => expandCoffeeExtras(item)}
+      onPress={() => renderAccordian(item, index)}
+      selectedIndex={selectedIndex}
     />
   );
 
   // child KeyExtractor
-  const childListKeyExtractor = (item, index) => String(index);
+  const keyExtractor = (item, index) => String(index);
 
   return (
     <View style={styles.container}>
@@ -44,7 +50,7 @@ const CoffeeExtras = (props): Node => {
           <FlatList
             data={coffeeData.extras}
             renderItem={childListRenderItem}
-            keyExtractor={childListKeyExtractor}
+            keyExtractor={keyExtractor}
           />
         </View>
       </SafeAreaView>
