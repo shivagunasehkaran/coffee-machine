@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
   },
   nameView: {
     justifyContent: 'center',
+    marginLeft: 20,
   },
   name: {
     color: ColourPalette.white,
