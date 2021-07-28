@@ -18,7 +18,7 @@ import {styles} from './CoffeeSizes.style';
 import {CoffeeContext} from '../../provider/CoffeeProvider';
 
 const CoffeeSizes = (props): Node => {
-  // get context to access and bind data
+  // get context to access data and bind data
   const {coffeeData} = useContext(CoffeeContext);
 
   // go to coffee style screen
