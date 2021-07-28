@@ -14,6 +14,7 @@ type NestedChildCoffeeExtrasProp = {
   item: Object,
   index: number,
   onPress: Function,
+  selectedIndex: number,
 };
 
 // flatlist render item
