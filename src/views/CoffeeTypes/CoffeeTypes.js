@@ -4,7 +4,7 @@
  */
 // library imports
 import type {Node} from 'react';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {
   FlatList,
   SafeAreaView,
@@ -22,9 +22,11 @@ import {ConstantText} from '../../utills/ConstantText';
 import {styles} from './CoffeeTypes.style';
 // route imports
 import * as ROUTES from '../../routes/Routes';
+// provider imports
+import {CoffeeContext} from '../../provider/CoffeeProvider';
 
 const CoffeeTypes = (props): Node => {
-  const [coffeeData, setCoffeeData] = useState([]);
+  const {coffeeData, setCoffeeData} = useContext(CoffeeContext);
   const [isLoading, setIsLoading] = useState(false);
 
   // call API one time when app loads
@@ -36,7 +38,7 @@ const CoffeeTypes = (props): Node => {
   // get coffee details using API
   async function getCoffeeDetails() {
     let data = await useFetchCoffeeAPI();
-    setCoffeeData(data.types);
+    setCoffeeData(data);
     setIsLoading(false);
   }
 
@@ -67,7 +69,7 @@ const CoffeeTypes = (props): Node => {
         <View style={styles.flatListView}>
           {isLoading && <ActivityIndicator size="large" />}
           <FlatList
-            data={coffeeData}
+            data={coffeeData.types}
             renderItem={childListRenderItem}
             keyExtractor={childListKeyExtractor}
           />
