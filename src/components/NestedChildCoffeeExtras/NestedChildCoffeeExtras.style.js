@@ -18,6 +18,9 @@ export const styles = StyleSheet.create({
   },
   name: {
     color: ColourPalette.white,
+    fontSize: 14,
+    fontFamily: ConstantText.font_family2,
+    fontWeight: ConstantText.font_bold2,
   },
   imageView: {
     flex: 1,
