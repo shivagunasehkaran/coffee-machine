@@ -1,4 +1,6 @@
 export const Images = {
   nfcCard: require('./img/views/nfcCard.png'),
-  lungo_medium: require('./img/components/medium.png'),
+  ristretto: require('./img/components/ristretto.png'),
+  cappuchino: require('./img/components/cappuchino.png'),
+  espresso: require('./img/components/espresso.png'),
 };
