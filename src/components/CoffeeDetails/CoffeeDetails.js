@@ -6,9 +6,11 @@
 import React from 'react';
 import type {Node} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import * as Images from '../../assets/Images';
 // style imports
 import {styles} from './CoffeeDetails.style';
+import * as Images from '../../assets/Images';
+// util imports
+import {ConstantText} from '../../utills/ConstantText';
 
 type CoffeeDetailsProp = {
   item: Object,
@@ -21,13 +23,23 @@ const CoffeeDetails = (props: CoffeeDetailsProp): Node => {
   // getting data from parent
   let item = props.item ? props.item : null;
   let name = item ? item.name : '';
+  let avatar = null;
+  if (name === ConstantText.coffee_ristretto) {
+    avatar = Images.Images.ristretto;
+  } else if (name === ConstantText.coffee_cappuccino) {
+    avatar = Images.Images.cappuchino;
+  } else if (name === ConstantText.coffee_espresso) {
+    avatar = Images.Images.espresso;
+  }
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => props.onPress(item)}>
-      <View style={styles.avatarView}>
-        <Image source={Images.Images.lungo_medium} style={styles.avatar} />
-      </View>
+      {avatar && (
+        <View style={styles.avatarView}>
+          <Image source={avatar} style={styles.avatar} />
+        </View>
+      )}
       <View style={styles.nameView}>
         <Text style={styles.name}>{name}</Text>
       </View>
