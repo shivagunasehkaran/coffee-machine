@@ -3,4 +3,6 @@ export const Images = {
   ristretto: require('./img/components/ristretto.png'),
   cappuchino: require('./img/components/cappuchino.png'),
   espresso: require('./img/components/espresso.png'),
+  unselectedCheckBox: require('./img/components/unselectedCheckBox.png'),
+  selectedCheckBox: require('./img/components/selectedCheckBox.png'),
 };
