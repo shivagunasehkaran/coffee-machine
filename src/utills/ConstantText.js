@@ -20,4 +20,5 @@ export const ConstantText = {
   coffee_cappuccino: 'Cappuccino',
   coffee_espresso: 'Espresso',
   loader_large: 'large',
+  platform_android: 'android'
 };
