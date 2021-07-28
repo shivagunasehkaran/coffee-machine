@@ -4,7 +4,7 @@
  */
 // library imports
 import type {Node} from 'react';
-import React from 'react';
+import React, {useContext} from 'react';
 import {FlatList, SafeAreaView, Text, View} from 'react-native';
 // route imports
 import * as ROUTES from '../../routes/Routes';
@@ -14,20 +14,13 @@ import CoffeeDetails from '../../components/CoffeeDetails/CoffeeDetails';
 import {ConstantText} from '../../utills/ConstantText';
 // style imports
 import {styles} from './CoffeeSizes.style';
-
-const sizes = [
-  {
-    name: 'Large',
-  },
-  {
-    name: 'Venti',
-  },
-  {
-    name: 'Tall',
-  },
-];
+// provider imports
+import {CoffeeContext} from '../../provider/CoffeeProvider';
 
 const CoffeeSizes = (props): Node => {
+  // get context to access and bind data
+  const {coffeeData} = useContext(CoffeeContext);
+
   // go to coffee style screen
   const goToCoffeeStyles = item => {
     props.navigation.push(ROUTES.pageNameCoffeeExtras);
@@ -51,7 +44,7 @@ const CoffeeSizes = (props): Node => {
         <Text style={styles.title}>{ConstantText.coffee_types_subTitle}</Text>
         <View style={styles.flatListView}>
           <FlatList
-            data={sizes}
+            data={coffeeData.sizes}
             renderItem={childListRenderItem}
             keyExtractor={childListKeyExtractor}
           />
