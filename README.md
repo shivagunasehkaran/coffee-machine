@@ -1,4 +1,4 @@
-# Coffee Machine : Test assignment 
+# Coffee Machine
 
 This coffee machine app allows you to connect with NFC (No NFC connection) and help you to compose your coffee. In this app you will be able to choose coffee types, coffee size and 
 add extra toppings like Milk, Sugar.
